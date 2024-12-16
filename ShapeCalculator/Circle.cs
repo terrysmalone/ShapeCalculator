@@ -1,25 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ShapeCalculator;
 
-namespace ShapeCalculator;
 public class Circle : IShape2D
 {
     private readonly double _radius;
+
+    public double Area
+    {
+        get
+        {
+            return Math.PI * Math.Pow(_radius, 2);
+        }
+    }
+
+    public double Perimiter
+    {
+        get
+        {
+            return 2.0 * Math.PI * _radius;
+        }
+    }
 
     public Circle(double radius)
     {
         if (radius <= 0)
         {
-            throw new ArgumentException("Diameter must be positive");
+            throw new ArgumentException("Radius must be positive");
         }
 
         _radius = radius;
     }
-
-    public double Area => Math.PI * Math.Pow(_radius, 2);
-
-    public double Perimiter => 2.0 * Math.PI * _radius;
 }

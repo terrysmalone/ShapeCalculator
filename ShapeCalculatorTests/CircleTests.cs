@@ -9,7 +9,7 @@ public class CircleTests
     [TestCase(0.0)]
     public void TestError(double diameter)
     {
-        Assert.Throws<ArgumentException>(() => new Circle(diameter)).Message.Equals("Diameter must be positive");
+        Assert.Throws<ArgumentException>(() => new Circle(diameter)).Message.Equals("Radius must be positive");
     }
 
     [TestCase(0.15, 0.07069)]
